@@ -18,8 +18,15 @@
   <div v-for="(todo,n) in todos">
     <ul>
       <li>
+        <template v-if="edit === n">
+          <input v-model="editedTodo">
+          <button @click="updateTodo(n)">Update</button>
+        </template>
+        <template v-else>
           <span class="todo">{{ todo }}</span>
+          <button @click="editTodo(todo, n)">Edit</button>
           <button @click="removeTodo(n)">Remove</button>
+        </template>
       </li>
     </ul>
   </div>

@@ -33,6 +33,16 @@ const app = {
       this.todos.splice(n, 1);
       this.saveTodos();
     },
+    editTodo(todo, n) {
+      this.edit = n;
+      this.editedTodo = todo;
+    },
+    updateTodo(n) {
+      this.todos[n] = this.editedTodo;
+      this.saveTodos();
+      this.editedTodo = '';
+      this.edit = '';
+    }
   }
 }
 
