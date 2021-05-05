@@ -28,7 +28,11 @@ const app = {
     saveTodos() {
       let parsed = JSON.stringify(this.todos);
       localStorage.setItem('todos', parsed);
-    }
+    },
+    removeTodo(n) {
+      this.todos.splice(n, 1);
+      this.saveTodos();
+    },
   }
 }
 
