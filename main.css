@@ -1,0 +1,6 @@
+h1 {text-align: center}
+#app {text-align: center}
+ul {list-style-type: none}
+li > span {font-size: 20px; margin-right: 10px}
+button {padding: 6px; margin: 4px}
+.newtodo {margin-right: 10px}
