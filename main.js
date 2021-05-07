@@ -4,16 +4,12 @@ const app = {
       todos: [],
       newTodo: '',
       editedTodo: '',
-      edit: ''
+      editIndex: ''
     }
   },
   mounted() {
     if (localStorage.getItem('todos')) {
-      try {
-        this.todos = JSON.parse(localStorage.getItem('todos'));
-      } catch (e) {
-        localStorage.removeItem('todos');
-      }
+      this.todos = JSON.parse(localStorage.getItem('todos'));
     }
   },
   methods: {
@@ -34,18 +30,16 @@ const app = {
       this.saveTodos();
     },
     editTodo(todo, n) {
-      this.edit = n;
+      this.editIndex = n;
       this.editedTodo = todo;
     },
     updateTodo(n) {
       this.todos[n] = this.editedTodo;
       this.saveTodos();
       this.editedTodo = '';
-      this.edit = '';
+      this.editIndex = '';
     }
   }
 }
 
 Vue.createApp(app).mount('#app');
-
-

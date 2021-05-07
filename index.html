@@ -19,7 +19,7 @@
   <div v-for="(todo,n) in todos">
     <ul>
       <li>
-        <template v-if="edit === n">
+        <template v-if="editIndex === n">
           <input v-model="editedTodo">
           <button @click="updateTodo(n)">Update</button>
         </template>
